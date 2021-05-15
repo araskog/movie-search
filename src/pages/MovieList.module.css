@@ -1,0 +1,10 @@
+.movielist {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem 1rem;
+  width: 90%;
+  margin: 1rem auto;
+  overflow-y: scroll hidden; /* Add vertical scrollbar */
+}
