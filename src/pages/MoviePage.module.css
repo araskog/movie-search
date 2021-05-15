@@ -1,9 +1,14 @@
 .moviecontainer {
   width: 70%;
-  height: 10rem;
+  height: auto;
   display: grid;
+  align-content: center;
+  text-align: center;
   grid-template-columns: 2fr 4fr;
-  margin: 1rem 4rem;
+}
+
+.moviecontainer img {
+  height: 20rem;
 }
 
 button {
@@ -12,8 +17,11 @@ button {
   margin: 0.5rem auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  border: none;
   outline: none;
+  background-color: #76323f;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {

@@ -9,22 +9,24 @@ const POSTER_MISSING =
 const MovieCard = ({ movie, showDetails }) => {
   return (
     <div className={classes.moviecard}>
+      <div className={classes.title}>
+        <h3>
+          <b>{movie.Title}</b>
+        </h3>
+      </div>
       <Link className={classes.link} to={`/${movie.imdbID}`}>
         <img
           className={classes.img}
+          width="200"
           alt={`Movie: ${movie.Title}`}
           src={movie.Poster !== "N/A" ? `${movie.Poster}` : POSTER_MISSING}
         />
         <div className={classes.details}>
-          <h3>
-            <b>{movie.Title}</b>
-          </h3>
           <p>{movie.Year}</p>
           <p>{showDetails ? ` Directed by: ${movie.Director}` : null}</p>
           <p>{showDetails ? `Plot: ${movie.Plot}` : null}</p>
         </div>
       </Link>
-      <div className={classes.additionalinfo}></div>
     </div>
   );
 };

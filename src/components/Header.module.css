@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(204, 183, 155);
+  background-color: rgb(53, 51, 49);
+  background-color: #76323f;
   padding: 0 10%;
 }
 
@@ -12,7 +13,7 @@
   font-size: 2rem;
   color: white;
   font-weight: bold;
-  text-shadow: 2px 2px rgb(73, 63, 51);
+  text-shadow: 2px 2px rgb(70, 69, 67);
 }
 
 .link {

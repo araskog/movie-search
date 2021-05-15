@@ -9,6 +9,7 @@ const initialState = {
   errorMessage: "",
   movies: [],
   movie: {},
+  totalPages: 0,
 };
 
 const reducer = createSlice({

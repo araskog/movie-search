@@ -8,3 +8,31 @@
   margin: 1rem auto;
   overflow-y: scroll hidden; /* Add vertical scrollbar */
 }
+
+.pagebuttons {
+  justify-content: center;
+  display: flex;
+  align-items: space-between;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pagebuttons p {
+  font-size: 20px;
+  color: #939191;
+}
+
+.pagebuttons button {
+  background-color: #76323f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 15px;
+  width: 10rem;
+}
+
+button:disabled {
+  background-color: #939191;
+  color: #f3f0ef;
+  cursor: default;
+}
