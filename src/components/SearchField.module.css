@@ -1,5 +1,5 @@
 .searchfield {
-  margin: 0.5rem auto;
+  margin: 1rem auto 0 auto;
   text-align: center;
 }
 
@@ -12,6 +12,7 @@
   border: none;
   outline: none;
   text-align: left;
+  background: #ffe39f;
 }
 
 /* MOBILE DEVICES */

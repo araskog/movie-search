@@ -25,8 +25,30 @@
   margin: 0 0.75rem;
   text-decoration: none;
   text-align: center;
+  align-content: center;
 }
 
 .link:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* MOBILE DEVICES */
+@media only screen and (max-width: 480px) {
+  .link {
+    height: 6.5rem;
+  }
+}
+
+/* TABLETS */
+@media only screen and (min-width: 481px) {
+  .link {
+    height: 5.5rem;
+  }
+}
+
+/* SMALL SCREENS AND UP */
+@media only screen and (min-width: 768px) {
+  .link {
+    height: 2.5rem;
+  }
 }

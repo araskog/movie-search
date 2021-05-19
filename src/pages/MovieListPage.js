@@ -82,7 +82,7 @@ const MovieListPage = () => {
         ) : isError ? (
           <ErrorPage message={errorMessage} />
         ) : (
-          // TO-DO: Handle duplicates (equal imdbID)
+          // TO-DO: Handle duplicates (equal imdbIDs)
           movies.map((movie, index) => {
             return <MovieCard movie={movie} key={`${movie.imdbID}${index}`} />;
           })
