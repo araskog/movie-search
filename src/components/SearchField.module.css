@@ -11,4 +11,26 @@
   border-radius: 5px;
   border: none;
   outline: none;
+  text-align: left;
+}
+
+/* MOBILE DEVICES */
+@media only screen and (max-width: 480px) {
+  .searchinput {
+    width: 50%;
+  }
+}
+
+/* TABLETS */
+@media only screen and (min-width: 481px) {
+  .searchinput {
+    width: 40%;
+  }
+}
+
+/* SMALL SCREENS AND UP */
+@media only screen and (min-width: 768px) {
+  .searchinput {
+    width: 25%;
+  }
 }

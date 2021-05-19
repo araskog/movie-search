@@ -1,0 +1,35 @@
+.pagebuttons {
+  justify-content: center;
+  display: flex;
+  align-items: space-between;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pagebuttons p {
+  font-size: 1.25rem;
+  color: #939191;
+}
+
+.button {
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(24, 108, 114);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0.75rem;
+  width: 10rem;
+}
+.button:disabled {
+  background-color: #939191;
+  color: #f3f0ef;
+  cursor: default;
+}
+
+.button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

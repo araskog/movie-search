@@ -1,23 +1,18 @@
-import { useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import SearchField from "./components/SearchField";
-import MovieList from "./pages/MovieList";
-import MoviePage from "./pages/MoviePage";
+import MovieListPage from "./pages/MovieListPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 function App() {
-  const searchValue = useSelector((state) => state.searchValue);
-
   return (
     <div className="App">
       <Header />
       <Switch>
         <Route path="/" exact>
-          <SearchField searchValue={searchValue} />
-          <MovieList searchValue={searchValue} />
+          <MovieListPage />
         </Route>
         <Route path="/:movieId">
-          <MoviePage />
+          <MovieDetailsPage />
         </Route>
       </Switch>
     </div>

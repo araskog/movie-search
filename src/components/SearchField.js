@@ -2,21 +2,20 @@ import { useDispatch } from "react-redux";
 import { actions } from "../store/reducer";
 import classes from "./SearchField.module.css";
 
-const SearchField = ({ value }) => {
+const SearchField = () => {
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
-    const searchValue = e.target.value.toString();
-    dispatch(actions.updateSearch(searchValue));
+    dispatch(actions.updateSearch(e.target.value));
   };
 
   return (
     <div className={classes.searchfield}>
       <input
         className={classes.searchinput}
-        value={value}
+        type="text"
         onChange={handleInputChange}
-        placeholder="Search for movie titles..."
+        placeholder="Search for a movie title..."
       ></input>
     </div>
   );

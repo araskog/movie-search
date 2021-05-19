@@ -2,6 +2,7 @@
   width: 70%;
   height: auto;
   display: grid;
+  margin: 1rem 1rem auto;
   align-content: center;
   text-align: center;
   grid-template-columns: 2fr 4fr;
@@ -11,19 +12,21 @@
   height: 20rem;
 }
 
-button {
-  width: 80%;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem auto;
+.link {
+  height: 2.5rem;
+  padding: 0.5rem 1.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   outline: none;
-  background-color: #76323f;
+  background-color: rgb(24, 108, 114);
   color: white;
   border: none;
   cursor: pointer;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  text-align: center;
 }
 
-button:hover {
+.link:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

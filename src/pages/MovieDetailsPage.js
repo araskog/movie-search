@@ -1,13 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import classes from "./MoviePage.module.css";
+
 import MovieCard from "../components/MovieCard";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import ErrorPage from "../ui/ErrorPage";
 
+import classes from "./MovieDetailsPage.module.css";
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const MoviePage = () => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   // TO-DO: Move state management to store
   const [movie, setMovie] = useState([]);
@@ -15,36 +17,40 @@ const MoviePage = () => {
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // TO-DO: Figure out how to manage async calls in store, similar fetch exists in MovieList.js
+  // TO-DO: Manage async calls in store, similar fetch exists in MovieList.js createAsyncThunk in reducer.js? (https://redux-toolkit.js.org/api/createAsyncThunk)
+
+  // Fetch movie details from OMDB API by movie ID
   const getMovieDetails = (movieId) => {
     setIsLoading(true);
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}`)
+    setIsError(false);
+    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&type="movie"`)
       .then((response) => response.json())
       .then((results) => {
         if (results.Response === "False") {
           setIsError(true);
-          setErrorMessage("Movie not found");
-          setIsLoading(false);
-          return;
+          setErrorMessage(results.Error);
+        } else {
+          setMovie(results);
         }
         setIsLoading(false);
-        setMovie(results);
       })
-      .catch((error) => {
+      .catch(({ message }) => {
         setIsLoading(false);
         setIsError(true);
-        setErrorMessage(error.message);
+        setErrorMessage(message);
       });
   };
 
+  // Get movie details with change of movie ID
   useEffect(() => {
     getMovieDetails(movieId);
   }, [movieId]);
 
+  //TO-DO: Handle "Back to search" onClick - should go to the current, not first page.
   return (
     <div className={classes.moviecontainer}>
-      <Link to={`/`}>
-        <button>{`<< Go back to search`}</button>
+      <Link to={`/`} className={classes.link}>
+        {`<< Back to search`}
       </Link>
       <div className={classes.moviedetails}>
         {isError ? (
@@ -59,4 +65,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default MovieDetailsPage;

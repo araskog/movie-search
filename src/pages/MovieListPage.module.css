@@ -1,0 +1,31 @@
+.movielist {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem 1rem;
+  width: 90%;
+  margin: 2rem auto;
+  overflow-y: scroll hidden; /* Add vertical scrollbar */
+}
+
+/* MOBILE DEVICES */
+@media only screen and (max-width: 480px) {
+  .movielist {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* TABLETS */
+@media only screen and (min-width: 481px) {
+  .movielist {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* SMALL SCREENS AND UP */
+@media only screen and (min-width: 768px) {
+  .movielist {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
