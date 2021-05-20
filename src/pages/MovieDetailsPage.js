@@ -5,9 +5,9 @@ import MovieCard from "../components/MovieCard";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import ErrorPage from "../ui/ErrorPage";
 
-import classes from "./MovieDetailsPage.module.css";
+import { fetchMovieDetails } from "../api/omdb";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+import classes from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -23,8 +23,7 @@ const MovieDetailsPage = () => {
   const getMovieDetails = (movieId) => {
     setIsLoading(true);
     setIsError(false);
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&type="movie"`)
-      .then((response) => response.json())
+    fetchMovieDetails(movieId)
       .then((results) => {
         if (results.Response === "False") {
           setIsError(true);
