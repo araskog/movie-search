@@ -7,9 +7,9 @@ import PageButtons from "../components/PageButtons";
 import ErrorPage from "../ui/ErrorPage";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
-import classes from "./MovieListPage.module.css";
+import { fetchMovies } from "../api/omdb";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+import classes from "./MovieListPage.module.css";
 
 const MovieListPage = () => {
   const searchValue = useSelector((state) => state.searchValue);
@@ -28,10 +28,7 @@ const MovieListPage = () => {
   const getMovies = (searchValue, pageNumber) => {
     setIsLoading(true);
     setIsError(false);
-    fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchValue}&type="movie"&page=${pageNumber}`
-    )
-      .then((response) => response.json())
+    fetchMovies(searchValue, pageNumber)
       .then((results) => {
         if (results.Response === "False") {
           setIsError(true);
