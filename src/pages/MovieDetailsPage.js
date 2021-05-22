@@ -11,14 +11,14 @@ import classes from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
-  // TO-DO: Move state management to store
+  // TODO: Move state management to store
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // TO-DO: Manage async calls in store, similar fetch exists in MovieList.js createAsyncThunk in reducer.js? (https://redux-toolkit.js.org/api/createAsyncThunk)
-
+  // TODO: Manage async calls in store, similar fetch exists in MovieList.js createAsyncThunk in reducer.js? (https://redux-toolkit.js.org/api/createAsyncThunk)
+  //FIXME: Fix ...
   // Fetch movie details from OMDB API by movie ID
   const getMovieDetails = (movieId) => {
     setIsLoading(true);
