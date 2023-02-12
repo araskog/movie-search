@@ -85,7 +85,7 @@ const MovieListPage = () => {
           })
         )}
       </div>
-      {isLoading ? null : (
+      {!isLoading && totalPages && (
         <PageButtons
           handleNextPage={handleNextPage}
           handlePrevPage={handlePrevPage}

@@ -6,7 +6,9 @@ const SearchField = () => {
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
-    dispatch(actions.updateSearch(e.target.value));
+    if (e.target.value.length > 2) {
+      dispatch(actions.updateSearch(e.target.value));
+    }
   };
 
   return (
