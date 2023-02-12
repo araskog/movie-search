@@ -7,12 +7,12 @@ const POSTER_MISSING =
 // TO-DO: Improve styling to work well for both movie list and details page
 const MovieCard = ({ movie, showDetails }) => (
   <div className={classes.moviecard}>
-    <div className={classes.title}>
-      <h3>
-        <b>{movie.Title}</b>
-      </h3>
-    </div>
     <Link className={classes.link} to={`/${movie.imdbID}`}>
+      <div className={classes.title}>
+        <h3>
+          <b>{movie.Title}</b>
+        </h3>
+      </div>
       <img
         className={classes.img}
         width="200"
